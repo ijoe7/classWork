@@ -26,7 +26,7 @@ app.get("/", (req: Request, res: Response, next: NextFunction) => {
 });
 
 app.get("/second", (req: Request, res: Response, next: NextFunction) => {
-  res.send("another route!!!");
+  res.send("another route!!");
 });
 
 // app.use("/users", usersRouter);
