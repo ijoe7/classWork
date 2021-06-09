@@ -22,11 +22,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
-  res.send("hello world");
+  res.status(200).json({
+    message: "ok",
+  });
 });
 
 app.get("/second", (req: Request, res: Response, next: NextFunction) => {
-  res.send("another route!!");
+  res.status(200).json({
+    message: "success",
+  });
 });
 
 // app.use("/users", usersRouter);
