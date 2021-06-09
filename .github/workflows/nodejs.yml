@@ -14,5 +14,6 @@ jobs:
         run: |
           echo hello world
           yarn
+          yarn tsc
           yarn start
           yarn jest
