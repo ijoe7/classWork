@@ -1,22 +1,18 @@
 name: Node
 
-on:
-  push:
-      branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
         
-      steps:
+    steps:
         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-        - name: yarn install, build, test
-          run: |
-            echo hello world
-            yarn
-            yarn start
-            yarn jest
+      - name: yarn install, build, test
+        run: |
+          echo hello world
+          yarn
+          yarn tsc
+          yarn jest
