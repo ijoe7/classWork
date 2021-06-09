@@ -9,6 +9,9 @@ jobs:
     steps:
         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      - name: use nodejs to run test
+        uses: actions/setup-node@v2
 
       - name: yarn install, build, test
         run: |
@@ -16,3 +19,5 @@ jobs:
           yarn
           yarn tsc
           yarn jest
+          rm -rf node_modules
+          yarn install --frozen-lockfile
